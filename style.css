@@ -24,3 +24,42 @@ body, html {
 .button:hover {
     background-color: #7700b3;
 }
+
+#container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    overflow: auto;
+}
+
+#container-image > img {
+    max-width: calc(100% - 40px); /* Subtracting 20px (10px margin on each side) from the maximum width */
+    max-height: calc(100% - 40px); /* Subtracting 20px (10px margin on each side) from the maximum height */
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px; /* Adding margin of 10px */
+}
+
+
+/*#container {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+    justify-content: center; 
+    align-items: center; 
+	overflow: auto;
+
+
+}
+
+#container-image > img{
+	width: 150px;
+	border-radius: 10px;
+
+}
+
