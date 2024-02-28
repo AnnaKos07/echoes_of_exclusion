@@ -32,7 +32,9 @@ function touchMoveFn(event) {
   const sectionNumber = findImageSection(touchEndX, screenSection);
   const newImgIndex =
     ((sectionNumber - 1 + direction + numOfImages) % numOfImages) + 1;
-  img.src = `img/${newImgIndex}.JPG`;
+  //img.src = `img/${newImgIndex}.JPG`;
+  console.log(img_arr[newImgIndex].original_img);
+  img.src = `${img_arr[newImgIndex].original_img}`;
 }
 
 // Function to find the section of the image
