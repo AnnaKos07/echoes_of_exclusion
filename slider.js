@@ -23,11 +23,6 @@ function createSlider(imgArr) {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
-    // Если вы хотите использовать пагинацию, добавьте этот параметр
-    // pagination: {
-    //     el: '.swiper-pagination',
-    //     clickable: true,
-    // },
   });
 
   imgArr.forEach((imgData) => {
