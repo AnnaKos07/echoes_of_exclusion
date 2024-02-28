@@ -1,28 +1,67 @@
 body, html {
+    background-color: #f4f4f4;
     height: 100%;
     margin: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    font-family: "ibm-plex-mono", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.button-container {
+.container-title {
+    display: flex;
+    width: 80vw;
+    margin: 0 auto;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    height: 10px; /* Allow the container to adjust its height based on content */
     text-align: center;
+    position: sticky;
+    top: 27%;
+}
+
+#title{
+    font-size: 23px;
+}
+
+.container-text {
+    display: flex;
+    width: 75vw;
+    margin: 0 auto;
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    height: 10px; /* Allow the container to adjust its height based on content */
+    text-align: center;
+    position: sticky;
+    top: 45%;
+}
+
+#text {
+    font-size: 19px;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100%; /* Adjust this value as needed to move the button further down */
     
 }
 
 .button {
-    padding: 32px 48px;
-    background-color: #6213c3;
+    padding: 20px 40px;
+    background-color: #2b2b2b;
     color: white;
     border: none;
-    border-radius: 2px;
+    border-radius: 15px;
     cursor: pointer;
-    font-size: 20px;
-}
-
-.button:hover {
-    background-color: #7700b3;
+    font-size: 19px;
+    font-family: "ibm-plex-mono", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 #container {
