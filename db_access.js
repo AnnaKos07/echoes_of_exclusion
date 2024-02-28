@@ -27,6 +27,8 @@
 //   console.log(`Прокси-сервер запущен на порту ${port}`);
 // });
 
+let img_arr = [];
+
 async function fetchData() {
   //const proxyUrl = "https://cors-anywhere.herokuapp.com/";
   const id = "1Kbu0D1wolVaW5bAxslj9mSDvMUgOtVNZTctC2qp2Ssw";
@@ -53,7 +55,6 @@ function redirectToSliderPage() {
       console.log("Data:", jsonData.table.rows);
 
       jsonData.table.rows.forEach((element, i) => {
-        counter++;
 
         img_arr[i] = {
           original_img: element.c[0].v,
@@ -64,7 +65,6 @@ function redirectToSliderPage() {
       });
 
       console.log(img_arr);
-      console.log(counter);
       const queryParams = encodeURIComponent(JSON.stringify(img_arr));
       window.location.href = `another_slider.html?img_arr=${queryParams}`;
     } else {
