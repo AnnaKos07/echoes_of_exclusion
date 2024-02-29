@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 body, html {
     background-color: #f4f4f4;
     height: 100%;
@@ -47,19 +49,18 @@ body, html {
     display: flex;
     justify-content: center;
     text-align: center;
-    margin-top: 100%; /* Adjust this value as needed to move the button further down */
     
 }
 
 .button {
-    padding: 20px 40px;
+    width: 100%;
+    padding: 24px 40px;
     background-color: #2b2b2b;
     color: white;
     border: none;
-    border-radius: 15px;
     cursor: pointer;
-    font-size: 19px;
-    font-family: "ibm-plex-mono", sans-serif;
+    font-size: 17px;
+    font-family: "ibm-plex-mono", monospace;
     font-weight: 400;
     font-style: normal;
 }
@@ -75,12 +76,49 @@ body, html {
 }
 
 #container-image > img {
-    max-width: calc(100% - 40px); /* Subtracting 20px (10px margin on each side) from the maximum width */
-    max-height: calc(100% - 40px); /* Subtracting 20px (10px margin on each side) from the maximum height */
-    width: auto;
+    max-width: calc(100% - 40px); 
+    max-height: calc(100% - 40px); 
     height: auto;
-    border-radius: 10px;
-    margin: 20px; /* Adding margin of 10px */
+    margin: 20px;
 }
 
+.swiper-container {
+    width: 100%;
+    height: 90%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    top: -24px;
+}
 
+.swiper-slide {
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    height: auto;
+}
+
+.swiper-pagination {
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+    background: #000000;
+}

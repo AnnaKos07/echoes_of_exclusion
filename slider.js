@@ -45,9 +45,15 @@ function createSlider(imgArr) {
   swiperContainer.appendChild(swiperWrapper);
 
   var mySwiper = new Swiper(".swiper-container", {
+    loop: true,
+    //loopAdditionalSlides: 1,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: true,
     },
   });
 
@@ -61,4 +67,8 @@ function createSlider(imgArr) {
 
     mySwiper.appendSlide(swiperSlide); // Добавление слайда в Swiper
   });
+}
+
+function redirectToInteractionPage() {
+  window.location.href = `interaction-page.html`;
 }
