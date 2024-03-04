@@ -1,5 +1,14 @@
 let counter = 0;
 let img_arr = [];
+
+const supakey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indka3BybHVuYWJ1d2ZmYXh3d3BqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDkyMTQwMDgsImV4cCI6MjAyNDc5MDAwOH0.O5MjYF9Z1_sEgS9zfb7-v_clMTp9lwFR_4hSLHhS7qI";
+const supaurl = "https://wdkprlunabuwffaxwwpj.supabase.co";
+const supadatabase = supabase.createClient(supaurl, supakey);
+const contentId = document.getElementById("id");
+const id = 1;
+let tableName = "images";
+
 async function fetchData() {
   //const proxyUrl = "https://cors-anywhere.herokuapp.com/";
   const id = "1Kbu0D1wolVaW5bAxslj9mSDvMUgOtVNZTctC2qp2Ssw";
@@ -57,6 +66,12 @@ function createSlider(imgArr) {
     },
   });
 
+  mySwiper.on("transitionEnd", function () {
+    var realIndex = mySwiper.realIndex;
+    console.log(realIndex);
+    updateSupabase(realIndex);
+  });
+
   imgArr.forEach((imgData) => {
     const imgElement = document.createElement("img");
     imgElement.src = imgData.original_img;
@@ -69,6 +84,22 @@ function createSlider(imgArr) {
   });
 }
 
-function redirectToInteractionPage() {
+async function updateSupabase(index) {
+  let res = await supadatabase
+    .from(tableName)
+    .update({
+      current_index: index,
+    })
+    .eq("id", 1);
+}
+
+//function to change the interaction status
+async function redirectToInteractionPage() {
+  let res = await supadatabase
+    .from(tableName)
+    .update({
+      status: true,
+    })
+    .eq("id", 1);
   window.location.href = `interaction-page.html`;
 }
