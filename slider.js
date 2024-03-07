@@ -40,6 +40,12 @@ document.addEventListener("DOMContentLoaded", function () {
           generated_img: element.c[2].v,
         };
       });
+      console.log(img_arr);
+      for (let i = img_arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [img_arr[i], img_arr[j]] = [img_arr[j], img_arr[i]];
+      }
+      console.log(img_arr);
       createSlider(img_arr);
     } else {
       console.log("Error!");
@@ -60,6 +66,9 @@ function createSlider(imgArr) {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    autoplay: {
+      delay: 30000,
+    },
     pagination: {
       el: ".swiper-pagination",
       dynamicBullets: true,
@@ -67,14 +76,23 @@ function createSlider(imgArr) {
   });
 
   mySwiper.on("transitionEnd", function () {
+    //let realIndex = Math.floor(Math.random() * 50);
     var realIndex = mySwiper.realIndex;
-    console.log(realIndex);
-    updateSupabase(realIndex);
+    //console.log(mySwiper);
+    var currentSlide = mySwiper.slides[mySwiper.realIndex]
+      .querySelector("img")
+      .getAttribute("id");
+    console.log(currentSlide);
+    //console.log(realIndex);
+    setTimeout(() => {
+      updateSupabase(currentSlide);
+    }, 1500);
   });
 
   imgArr.forEach((imgData) => {
     const imgElement = document.createElement("img");
     imgElement.src = imgData.original_img;
+    imgElement.id = imgData.description;
 
     const swiperSlide = document.createElement("div");
     swiperSlide.classList.add("swiper-slide");

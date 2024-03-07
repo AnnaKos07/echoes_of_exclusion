@@ -6,15 +6,80 @@
     <title>Slider Page</title>
     <!-- Подключение стилей Swiper.js -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <div id="main">
-        NUM: <span id="num"></span><br />
-        ID: <span id="id"></span><br />
-      </div>
+    
+    <audio id="audio_0" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/1F5PGD8VPk7qZgBnhyzMN3/381b23330c86df72c69e17d164ef0496/1.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_1" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/3vgfwuqKoaJAIudTBK5ANW/9b9d2af654a5b18d2a63eeba7c6965aa/2.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_2" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/2RRqLUJsTo6giLHxkCckTh/0b6b67fea99cb6bac15b726ba8555ff6/3.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_3" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/1lNxDcG0GB2W8moCJi1x8x/68bdedd90937e3af0945401749d7a22e/4.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_4" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/28r1VZASw3XxIMM0Zp75rj/6f545f64a397c72fdc69228cf7951c56/5.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_5" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/70s5iZ4mxuwiYdwwx29Tdv/7f7f33c7e563d031f4809be8a95cc247/6.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_6" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/4Izz1DSI8ePwijKKNbp7X0/2026036dac317e3f61a27f92dcd43bb3/7.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_7" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/5GSF8bVSTZxBisJ9qpfZta/9a54a90a303d0d208a74dfd77a3488d3/8.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_8" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/4eihrCRu6c2tC7qRmiswj/1e33635577c9d26c2fb4210f01a10054/9.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_9" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/2JdYJsjRnqX2PaC64L81HF/30fb43239130ebdb85b109660bcffdf8/10.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_10" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/3slP6wGod0UsRlOWRpVac8/6d846395919c56387543917afc8eca68/11.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_11" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/3AlwxPZQB88LvPIky6hT1M/1a3d231b8fe962b371a8834110cd1b36/12.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_12" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/1OTrh0t3ln1iDK4PGTI7n0/62f97dc9df72d789d787f40e4247b165/13.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_13" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/66yjK9Ghuxz8fkSYQtDOhJ/67178cf819af33787aff74f7f642e1d4/14.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_14" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/6bCr9t3EjXATDpDIaIoP6e/dd932400dbfa527dbb82b601935d5bf8/15.mp3" type="audio/mpeg"></audio>
+
+    <audio id="audio_15" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/1USZlAxxHSrb7hHpI2dxvB/9990037f5de17883f446d911828cfd5f/16.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_16" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/6K53D4pfQsAt87uimnNM6Q/594afb061eaebf36803e793d71baca39/17.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_17" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/5LicRhhnJ26Pi4ZfITL2SH/a8cda8f8c0fa8c5d8d8568de20cec8bc/18.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_18" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/3I8ureUr3GEHwr2LLSrNyU/0f8a1477199f0e2fb7044e5bdc6f92c1/19.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_19" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/2K3EKH8B0mhrocJ9GoSdy1/de97ed9d6750601e2f518bea73c89f9f/20.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_20" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/5ibJUxXl1agWcZcw1zT6EO/c9233d5c4ee69b8b69e2f7f322db2b07/21.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_21" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/1D6bOA0rcCW49yJnCzlUsl/a24177ee7a1d6ad6e54826398538d502/22.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_22" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/5eqdRrXajEvuy7vNVR4i1j/f0d74d9e15e06babed6bbd12d0d5bc42/23.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_23" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/GtJLUk7FAk9nQqAdHzevL/687fc175d964402d8dd4ffaa1032256a/24.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_24" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/6nVRVlYnB0w3SFljHKKks9/ee536dc2870da463aa94d3337f5f27ec/25.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_25" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/6h4YOjigi7qSY6xmsSiN27/4339cecbde1c5e3b2fe05b4c35bf80a3/26.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_26" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/3XPCZutww00NpdVDbxntxl/07c6cdf4602704c2bc81d8129f92172d/27.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_27" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/V4JMR2x0lSxBHe8a6MhIU/918b9b356787ea29ab58cf7ff588173f/28.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_28" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/VwZaRdVovQoRbRvD3s9fx/321ede643cabc55671a214f2efcb93e3/29.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_29" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/2F3kGWng8hlFxs0vjPNolF/22424d1d93f0d28bf801de4414905b38/30.mp3" type="audio/mpeg"></audio>
+
+    <audio id="audio_30" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/19mS3pRrmzXjkYFtudxX70/5462d0d493bef520264272ca7a276e29/31.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_31" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/5Rb5bV98Tbo9wmygFJst0E/b89224122d6a08a02d7bbe642ca2e16d/32.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_32" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/4lwUDnb3wcm09lO20YfeZr/8f32ad400d86a11fca857ed09d26c5fa/33.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_33" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/31Uw93wsrNBrIp4JzBcIRP/37fc8eb6e37ca49c4e358a3d7b36aa8b/34.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_34" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/4iefXf7BWZM1V7QLQuFFLB/d5c5d6ff04509f4e17da9b24b222b8af/35.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_35" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/6QPjiJC193mxgElnlrzuqt/88c437f6789bf3544e341949d535ec7a/36.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_36" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/4cuCEFmOf2kIG5BuikEPW/856a2d427de2325f5a139637388ff2c9/37.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_37" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/7w4WN5XL64zp0FwwDRQmK4/80382934f70f244c26370fb7fd201ef8/38.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_38" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/4nx5c5q7Id187fP0ILwn7V/00bebcc8b99ebdc6b3bffdb790553742/39.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_39" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/4ndUR2YGW3suIhRoNtKFqb/35db977b350d98af40300ccf5dfb2363/40.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_40" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/Va44JhwdgLfypo3JdKVWv/4fde2e231472788459c92cd0fe822cd1/41.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_41" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/2NTleVrIYkRNap4O9LWE7a/6835e2ba3fdf7b41ced03ba3ddf007aa/42.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_42" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/4h48ZEc9JrUQt6l6R1w2Q3/f819bc58e1b772ba231fdd9dad31246e/43.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_43" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/5gu5iSGswW7FkNzeXegiK4/b74b77fde02efa70d1f4cd81ff0a9f71/44.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_44" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/zzjSkoI8opJgCSjs2ZQYj/1444a764d9c0f4762c6a4205b95116ad/45.mp3" type="audio/mpeg"></audio>
+
+    <audio id="audio_45" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/1P8uuTFv7YbuW2JfOBkV6I/c50d46a3f2e4ee5a1bf098b10fa02ff8/46.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_46" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/1JdYXZPDVtHLnVyail2yIP/bd6f4c8e23bf952087c14546db0f551a/47.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_47" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/mGXp8e3Rrr2RZlI9i9mkm/394e904968d2f5eefc088ad92e9d2964/48.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_48" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/6UtHvcIHa89ACvisl4rPWO/3e7b0bad3f202fd1f6a076e3fe4005cd/49.mp3" type="audio/mpeg"></audio>
+    <audio id="audio_49" controls><source src="https://assets.ctfassets.net/abkfxw6zqfiy/2V9VGB3xAcQSEEB8v9wPJD/742bf5e4ef28ff15a76bce1aa69dbaa1/50.mp3" type="audio/mpeg"></audio>
+
+
+     <span id="num" style = "display: none;"></span><br />
+     <span id="id" style = "display: none;"></span><br />
+    <div id="installation-main"></div>
+
+    <button id="button">play</button>
 
     <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
     <script src="installation.js"></script>
+    <style>
+        img {
+            opacity: 0; /* Начальное состояние: изображение скрыто */
+            transition: opacity 0.5s ease; /* Анимация плавного изменения opacity на 1 секунду */
+        }
+    </style>
+
+
 </body>
 </html>

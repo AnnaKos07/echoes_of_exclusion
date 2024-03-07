@@ -12,6 +12,27 @@ let tableName = "images";
 let counter = 0;
 let img_arr = [];
 
+const button = document.querySelector("#button");
+button.addEventListener("click", () => {
+  let audio = document.querySelector("#audio_0");
+  audio.play();
+});
+const elevenLabsApiKey = "a02a0132af07eb22401c954d229af7dc";
+// const voices = [
+//   "https://assets.ctfassets.net/abkfxw6zqfiy/1F5PGD8VPk7qZgBnhyzMN3/381b23330c86df72c69e17d164ef0496/1.mp3",
+//   "https://assets.ctfassets.net/abkfxw6zqfiy/3vgfwuqKoaJAIudTBK5ANW/9b9d2af654a5b18d2a63eeba7c6965aa/2.mp3",
+//   "https://assets.ctfassets.net/abkfxw6zqfiy/2RRqLUJsTo6giLHxkCckTh/0b6b67fea99cb6bac15b726ba8555ff6/3.mp3",
+// ];
+
+// voices.forEach((item, key) => {
+//   const audio = document.createElement("audio");
+//   audio.id = key;
+//   audio.src = item;
+//   console.log(item);
+//   document.body.appendChild(audio);
+//   //audio.play();
+// });
+
 async function fetchData() {
   const id = "1Kbu0D1wolVaW5bAxslj9mSDvMUgOtVNZTctC2qp2Ssw";
   const gid = "0";
@@ -41,14 +62,52 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.log(payload.new);
         num.innerHTML = payload.new.current_index;
         let id = payload.new.current_index;
-        let element = document.getElementById(id);
+        let status = payload.new.status;
+        let element = document.getElementById("" + id);
+
+        let generated_element = document.getElementById("generated_" + id);
+
+        let choosen_audio = document.getElementById("audio_" + id);
 
         let images = document.querySelectorAll("img");
+
         images.forEach((element) => {
           element.style.display = "none";
         });
 
         element.style.display = "block";
+        setTimeout(() => {
+          // Постепенно увеличиваем прозрачность изображения до 1 (полностью видимое)
+          //element.style.display = "block";
+          element.style.opacity = "1";
+        }, 500);
+
+        let timeout = null;
+        if (status == true) {
+          let choosen_audio = document.getElementById("audio_" + id);
+          let audios = document.querySelectorAll("audio");
+          console.log(choosen_audio);
+          clearTimeout(timeout);
+          audios.forEach((item) => {
+            clearTimeout(timeout);
+            item.pause();
+            item.currentTime = 0;
+          });
+          timeout = setTimeout(() => {
+            audios.forEach((item) => {
+              item.pause();
+              item.currentTime = 0;
+            });
+            choosen_audio.play();
+            generated_element.style.display = "block";
+            //generated_element.style.opacity = "1";
+            setTimeout(() => {
+              generated_element.style.opacity = "1";
+            }, 700);
+          }, 2000);
+        } else {
+          choosen_audio.stop();
+        }
       }
     )
     .subscribe();
@@ -61,31 +120,88 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   fetchData().then((jsonData) => {
     if (jsonData) {
-      console.log("Data:", jsonData.table.rows);
-
       jsonData.table.rows.forEach((element, i) => {
-        counter++;
-
-        img_arr[i] = {
-          original_img: element.c[0].v,
-          description: element.c[1].v,
-          generated_img: element.c[2].v,
-        };
-
         let image = document.createElement("img");
         image.src = element.c[0].v;
         image.id = i;
         image.style.display = "none";
-        body.appendChild(image);
+        image.style.width = "40%";
+        //image.style.hight = "90%";
+        image.style.margin = "1%";
+
+        let generated_image = document.createElement("img");
+        generated_image.src = element.c[2].v;
+        generated_image.id = "generated_" + i;
+        generated_image.style.display = "none";
+        generated_image.style.width = "40%";
+        //generated_image.style.hight = "90%";
+        generated_image.style.margin = "1%";
+
+        let index = document.createElement("p");
+        index.id = "index_" + i;
+        index.innerText = element.c[1].v;
+        index.style.display = "none";
+
+        document.getElementById("installation-main").appendChild(image);
+        document
+          .getElementById("installation-main")
+          .appendChild(generated_image);
+        document.getElementById("installation-main").appendChild(index);
       });
 
-      finalData = img_arr;
+      //finalData = img_arr;
     } else {
       console.log("Error!");
     }
   });
-
-  setTimeout(() => {
-    console.log(finalData);
-  }, 500);
 });
+
+// async function readDescription(question) {
+//   const text = question;
+//   const voiceId = [
+//     "UTHZFdXJUSub9PlEkyfN",
+//     "89oiFBkqgZRsUAtLdnb8",
+//     "ycRPTzvesnk8BHFb0Amw",
+//   ];
+//   let current_id = voiceId[Math.floor(Math.random() * 3)];
+//   console.log(current_id);
+//   console.log(text);
+//   const headers = new Headers();
+//   headers.append("Accept", "audio/mpeg");
+//   headers.append("xi-api-key", elevenLabsApiKey);
+//   headers.append("Content-Type", "application/json");
+
+//   const body = JSON.stringify({
+//     text: text,
+//     model_id: "eleven_monolingual_v1",
+//     voice_settings: {
+//       stability: 0.5,
+//       similarity_boost: 0.5,
+//     },
+//   });
+
+//   try {
+//     const response = await fetch(
+//       `https://api.elevenlabs.io/v1/text-to-speech/${current_id}/stream`,
+//       {
+//         method: "POST",
+//         headers: headers,
+//         body: body,
+//       }
+//     );
+
+//     if (!response.ok) {
+//       console.error(`Error: ${response.status} - ${response.statusText}`);
+//       const responseText = await response.text();
+//       console.error("Response Text:", responseText);
+//       throw new Error("Text to Speech API request failed");
+//     }
+
+//     const blob = await response.blob();
+//     const url = window.URL.createObjectURL(blob);
+//     const audio = new Audio(url);
+//     audio.play();
+//   } catch (error) {
+//     console.error("Error in ElevenLabs TTS API request:", error.message);
+//   }
+// }

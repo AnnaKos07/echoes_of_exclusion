@@ -111,8 +111,8 @@ body, html {
 }
 
 .swiper-pagination .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
+    width: 4vw;
+    height: 4vw;
     background: rgba(0, 0, 0, 0.5);
     margin: 0 5px;
     border-radius: 50%;
@@ -120,7 +120,7 @@ body, html {
 }
 
 .swiper-pagination .swiper-pagination-bullet-active {
-    background: #000000;
+    background-color: #000 !important;
 }
 
 
@@ -133,3 +133,23 @@ body, html {
     color: white;
     padding: 5px 10px;
   }
+
+/* installation div */
+
+#installation-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center;
+    margin: 20px;
+}
+
+audio {
+    display: none;
+    width: 300px;
+    height: 100px;
+    position: fixed;
+    left:0;
+    top:0;
+}
+
