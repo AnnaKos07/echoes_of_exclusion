@@ -18,20 +18,6 @@ button.addEventListener("click", () => {
   audio.play();
 });
 const elevenLabsApiKey = "a02a0132af07eb22401c954d229af7dc";
-// const voices = [
-//   "https://assets.ctfassets.net/abkfxw6zqfiy/1F5PGD8VPk7qZgBnhyzMN3/381b23330c86df72c69e17d164ef0496/1.mp3",
-//   "https://assets.ctfassets.net/abkfxw6zqfiy/3vgfwuqKoaJAIudTBK5ANW/9b9d2af654a5b18d2a63eeba7c6965aa/2.mp3",
-//   "https://assets.ctfassets.net/abkfxw6zqfiy/2RRqLUJsTo6giLHxkCckTh/0b6b67fea99cb6bac15b726ba8555ff6/3.mp3",
-// ];
-
-// voices.forEach((item, key) => {
-//   const audio = document.createElement("audio");
-//   audio.id = key;
-//   audio.src = item;
-//   console.log(item);
-//   document.body.appendChild(audio);
-//   //audio.play();
-// });
 
 async function fetchData() {
   const id = "1Kbu0D1wolVaW5bAxslj9mSDvMUgOtVNZTctC2qp2Ssw";

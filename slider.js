@@ -75,6 +75,11 @@ function createSlider(imgArr) {
     },
   });
 
+  let tim = null;
+  mySwiper.on("transitionStart", function () {
+    clearTimeout(tim);
+  });
+
   mySwiper.on("transitionEnd", function () {
     //let realIndex = Math.floor(Math.random() * 50);
     var realIndex = mySwiper.realIndex;
@@ -84,7 +89,7 @@ function createSlider(imgArr) {
       .getAttribute("id");
     console.log(currentSlide);
     //console.log(realIndex);
-    setTimeout(() => {
+    tim = setTimeout(() => {
       updateSupabase(currentSlide);
     }, 1500);
   });
@@ -112,12 +117,6 @@ async function updateSupabase(index) {
 }
 
 //function to change the interaction status
-async function redirectToInteractionPage() {
-  let res = await supadatabase
-    .from(tableName)
-    .update({
-      status: true,
-    })
-    .eq("id", 1);
-  window.location.href = `interaction-page.html`;
+async function redirectToIndexPage() {
+  window.location.href = `index.html`;
 }

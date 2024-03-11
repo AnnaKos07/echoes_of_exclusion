@@ -139,7 +139,7 @@ body, html {
 #installation-main {
     display: flex;
     flex-direction: row;
-    justify-content: center; /* Centers items horizontally */
+    justify-content: center;
     align-items: center;
     margin: 20px;
 }
